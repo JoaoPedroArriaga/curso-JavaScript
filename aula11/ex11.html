@@ -22,13 +22,12 @@
             let res = document.getElementById('res');
 
             res.innerHTML = `<p>Vivendo em ${pais}</p>`
+            res.innerHTML += (pais == "Brasil")? "<p>Brasileiro</p>":"<p>Você é Estrangeiro</p>"
             /*if(pais == "Brasil"){
                 res.innerHTML += "<p>Brasileiro</p>"
             }else{
                 res.innerHTML += "<p>Você é Estrangeiro</p>"
             }*/
-
-            res.innerHTML += (pais == "Brasil")? "<p>Brasileiro</p>":"<p>Você é Estrangeiro</p>"
         }
     </script>
 </body>
