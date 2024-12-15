@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculo de Troco</title>
+    <style>
+        
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        input{
+            width: 150px;
+            height: 50px;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>Calculando o Troco</h1>
+
+    <input type="button" value="Comprar Produto" onclick="getProd()">
+
+    <script>
+        function getProd(){
+            let nome_prod = prompt("Qual produto você está comprando?");
+
+            let prec_prod = Number(prompt(`Quanto custa o ${nome_prod} que você está comprando?`));
+
+            let valor_pag = Number(prompt(`Qual foi o valor que você deu para pagar ${nome_prod}?`));
+
+            let troco = calcTroco(prec_prod, valor_pag);
+
+            mensagem(troco, nome_prod, prec_prod, valor_pag);
+        }
+
+
+        function calcTroco(prec_prod, valor_pag){
+            let troco = valor_pag - prec_prod;
+
+            return troco;
+        }
+
+        function mensagem(troco, nome_prod, prec_prod, valor_pag){
+            if(troco<0){
+                troco*=-1;
+                alert(`Faltou ${troco.toLocaleString("pt-BR", {style: "currency", currency: "BRL"})} para você comprar o ${nome_prod}`)
+            } else{
+                alert(`Você comprou ${nome_prod} que custou ${prec_prod.toLocaleString("pt-BR", {style: "currency", currency: "BRL"})}. \nDeu ${valor_pag.toLocaleString("pt-BR", {style: "currency", currency: "BRL"})} em dinheiro e vai receber ${troco.toLocaleString("pt-BR", {style: "currency", currency: "BRL"})} de troco. \nVolte Sempre`)
+            }
+        }
+    </script>
+</body>
+</html>
