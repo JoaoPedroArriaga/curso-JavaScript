@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mensagens</title>
+    <style>
+        input{
+            width: 100px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Desafio das Mensagens</h1>
+
+    <input type="button" value="Botão 1" onclick="clicar(0)">
+    <input type="button" value="Botão 2" onclick="clicar(1)">
+    <input type="button" value="Botão 3" onclick="clicar(2)">
+
+    <script>
+        function clicar(bttn){
+            switch(bttn){
+                case 0:
+                    alert("Você clicou no 1º botão")
+                    break;
+                case 1:
+                    alert("Você clicou no 2º botão")
+                    break;
+                case 2:
+                    alert("Você clicou no 3º botão")
+                    break;
+                default:
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>
