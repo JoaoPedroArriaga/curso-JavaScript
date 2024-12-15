@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor R$ -> US$</title>
+    <style>
+
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        input{
+            width: 150px;
+            height: 50px;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Conversor R$ -> US$</h1>
+
+    <input type="button" value="Coverter" onclick="getValor()">
+
+    <div id="msg">
+        <p>Clique no botão acima para iniciar!</p>
+    </div>
+
+    <script>
+        let cot_dol = parseFloat(prompt("Antes de mais nada. Quanto está a cotação do dolar agora?"));
+
+        function getValor(){
+            let val_real = parseFloat(prompt("Quantos R$ você tem na carteira?"));
+
+            calcValorDolar(val_real);
+        }
+
+        function calcValorDolar(val_real){
+            let val_dol = val_real/cot_dol; 
+
+            showResultado(val_real, val_dol)
+        }
+
+        function showResultado(val_real, val_dol){
+            let msg = document.getElementById("msg");
+
+            msg.innerHTML = 
+            `<h2>
+                O valor de ${val_real.toLocaleString("pt-BR", {style: "currency", currency: "BRL"})} em dolar com cotação ${cot_dol.toLocaleString("pt-BR", {style: "currency", currency: "BRL"})} é igual a ${val_dol.toLocaleString("pt-BR", {style: "currency", currency: "USD"})}
+            </h2>`;
+        }
+    </script>
+</body>
+</html>
