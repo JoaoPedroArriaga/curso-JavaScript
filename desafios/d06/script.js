@@ -1,5 +1,5 @@
 function getTemp(){
-    let temp = [0,1,2];
+    let temp = [];
     temp[0] = parseFloat(prompt("Digite uma temperatura em °C (Celsius)"));
 
     converter(temp)

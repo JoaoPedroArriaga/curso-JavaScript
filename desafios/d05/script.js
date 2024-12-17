@@ -1,5 +1,5 @@
 function getDistancia(){
-    let dis = [0,1,2,3,4,5,6];
+    let dis = [];
     dis[0] = parseFloat(prompt("Digite uma distância em metros (m)"));
 
     converter(dis);
