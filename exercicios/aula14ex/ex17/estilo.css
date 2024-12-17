@@ -9,7 +9,7 @@ body{
     width: 100vw;
     height: 100vh;
     background-color: rgb(43, 146, 255);
-    float: normal 1em Arial;
+    font: normal 1em Arial;
 }
 
 header{
