@@ -8,36 +8,23 @@ function adicionar(){
     lista = document.getElementById("lista")
 
     if(isAllFalse(valor, num) != 0){
-        switch(isAllFalse(valor, num)){
-            case 1:
-                alert("[ERRO] Por favor digite um valor")
-                break;
-            case 2:
-                alert("[ERRO] Por favor digite um valor menor que 100")
-                break;
-            case 3:
-                alert("[ERRO] Por favor digite um valor maior que 0")
-                break;
-            case 4:
-                alert("[ERRO] O valor já existe na lista")
-                break;
-            default:
-                alert("ERRO INESPERADO!")
-                break;
-        }
+        alertaErro(isAllFalse(valor, num))
     }else{
-        msg.innerHTML = "";
         let item = document.createElement("option")
         num.push(Number(valor.value));
         item.text = `Valor ${valor.value} adicionado.`;
         item.value = `item${num.indexOf(valor.value)}`;
         lista.appendChild(item);
+        msg.innerHTML = "";
     }
+
+    valor.value = '';
+    valor.focus();
 }
 
 function finalizar(){
     if(lista.length == 0){
-        alert("Por favor, informe valores antes de finalizar")
+        alertaErro(5)
     }else{
         msg = document.getElementById("msg");
 
@@ -92,6 +79,29 @@ function valueExists(valor, num){
         return true;
     }else{
         return false;
+    }
+}
+
+function alertaErro(code){
+    switch(code){
+        case 1:
+            alert("[ERRO] Por favor digite um valor")
+            break;
+        case 2:
+            alert("[ERRO] Por favor digite um valor menor que 100")
+            break;
+        case 3:
+            alert("[ERRO] Por favor digite um valor maior que 0")
+            break;
+        case 4:
+            alert("[ERRO] O valor já existe na lista")
+            break;
+        case 5:
+            alert("[ERRO] Por favor, informe valores antes de finalizar")
+            break;
+        default:
+            alert("ERRO INESPERADO!")
+            break;
     }
 }
 
