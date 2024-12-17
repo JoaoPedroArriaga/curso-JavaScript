@@ -1,0 +1,10 @@
+function fatoria(n){
+    let fat = 1
+
+    for(let c = n; c > 1; c--){
+        fat = fat*c;
+    }
+    return fat;
+}
+
+console.log(fatoria(5))
