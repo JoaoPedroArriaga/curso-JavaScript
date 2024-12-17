@@ -127,7 +127,7 @@ function minNum(num){
 function soma(num){
     let soma = 0;
     for(let pos in num){
-        soma = soma + num[pos]
+        soma += num[pos]
     }
 
     return soma;
