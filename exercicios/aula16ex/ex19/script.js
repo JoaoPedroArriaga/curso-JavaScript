@@ -4,9 +4,6 @@ let lista = document.getElementById("lista")
 let msg = document.getElementById("msg");
 
 function adicionar(){
-    valor = document.getElementById("num")
-    lista = document.getElementById("lista")
-
     if(isAllFalse(valor, num) != 0){
         alertaErro(isAllFalse(valor, num))
     }else{
